@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Contact Manager</h1>
+      <p class="subtitle">Add, edit, and manage your contacts — stored locally in your browser.</p>
+    </header>
+
+    <section class="panel form-panel">
+      <h2>Add New Contact</h2>
+      <form id="contactForm">
+        <div class="row">
+          <label>Name<input type="text" id="name" required></label>
+          <label>Phone<input type="tel" id="phone" required></label>
+        </div>
+        <div class="row">
+          <label>Email<input type="email" id="email" required></label>
+        </div>
+        <div class="row actions">
+          <button type="submit" id="saveBtn">Save Contact</button>
+          <button type="button" id="clearBtn" class="muted">Clear</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel list-panel">
+      <div class="list-header">
+        <h2>Your Contacts</h2>
+        <div class="tools">
+          <input id="search" placeholder="Search name, phone, or email">
+          <button id="export">Export</button>
+          <input type="file" id="importFile" accept="application/json" style="display:none">
+          <button id="import">Import</button>
+          <button id="clearAll" class="danger">Clear All</button>
+        </div>
+      </div>
+      <div id="empty" class="empty">No contacts yet — add one above.</div>
+      <table id="contactsTable" class="contacts" hidden>
+        <thead>
+          <tr><th>Name</th><th>Phone</th><th>Email</th><th>Actions</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
